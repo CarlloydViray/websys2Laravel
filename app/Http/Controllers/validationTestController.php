@@ -17,6 +17,8 @@ class validationTestController extends Controller
             'bday' => 'required|date_format:Y/m/d',
             'website' => 'required|url',
             'email' => 'required|email',
+            'password' => 'required|min:6|max:20',
+            'password2' => 'required|same:password'
         ];
 
         $customMessages = [
@@ -24,9 +26,8 @@ class validationTestController extends Controller
             'numeric' => 'Hindi pwede ang mga letra sa input na ito'
         ];
         $this->validate($req, $rules, $customMessages);
-            
 
-        return view('validationTestView', ['fname' => $req->input('fname'), 'lname' => $req->input('lname'), 'age' => $req->input('age'), 'bday' => $req->input('bday'), 'website' => $req->input('website'), 'email' => $req->input('email')]);
+
+        return view('validationTestView', ['fname' => $req->input('fname'), 'lname' => $req->input('lname'), 'age' => $req->input('age'), 'bday' => $req->input('bday'), 'website' => $req->input('website'), 'email' => $req->input('email'), 'password' => $req->input('password')]);
     }
-
 }

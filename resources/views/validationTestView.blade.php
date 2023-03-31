@@ -34,6 +34,10 @@
                     <td>{{$lname}}</td>
                 </tr>
                 <tr>
+                    <td><b>Sex</b></td>
+                    <td>{{$password}}</td>
+                </tr>
+                <tr>
                     <td><b>Age</b></td>
                     <td>{{$age}}</td>
                 </tr>

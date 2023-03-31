@@ -50,6 +50,23 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="name">Password</label>
+                <input type="password" class="form-control" id="name" name="password" placeholder="Enter Password">
+
+                @error('password')
+                    <span class="mb-3" style="color: red">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="name">Retype Password</label>
+                <input type="password" class="form-control" id="name" name="password2"
+                    placeholder="Retype Password">
+
+                @error('password2')
+                    <span class="mb-3" style="color: red">{{ $message }}</span>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="name">Age</label>
                 <input type="text" class="form-control" id="name" name="age" placeholder="Enter Age"
                     value="{{ old('age') }}">
