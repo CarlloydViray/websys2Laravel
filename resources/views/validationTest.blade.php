@@ -37,9 +37,6 @@
                     <span class="mb-3" style="color: red">{{ $message }}</span>
                 @enderror
             </div>
-
-
-
             <div class="mb-3">
                 <label for="name">Last Name</label>
                 <input type="text" class="form-control" id="name" name="lname" placeholder="Enter Last Name"

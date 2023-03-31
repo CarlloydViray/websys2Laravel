@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\employeesController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
@@ -78,3 +79,8 @@ Route::view('/registration','registration');
 
 Route::post('/validationTestView',[validationTestController::class,'regValidate']);
 Route::view('/validationTest','validationTest');
+
+//routing models
+Route::get('/createNew', [employeesController::class,'create']);
+Route::post('createUser',[employeesController::class, 'store']);
+Route::get('/employeesView', [employeesController::class,'index']);
