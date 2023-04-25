@@ -46,7 +46,27 @@
                     <span class="mb-3" style="color: red">{{ $message }}</span>
                 @enderror
             </div>
-            
+
+            <div class="mb-3">
+                <label for="name">Email</label>
+                <input type="text" class="form-control" id="name" name="email" placeholder="Enter Email"
+                    value="{{ old('email') }}">
+
+                @error('email')
+                    <span class="mb-3" style="color: red">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="name">Password</label>
+                <input type="text" class="form-control" id="name" name="password" placeholder="Enter Password"
+                    value="{{ old('password') }}">
+
+                @error('password')
+                    <span class="mb-3" style="color: red">{{ $message }}</span>
+                @enderror
+            </div>
+
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">Register</button>
             </div>

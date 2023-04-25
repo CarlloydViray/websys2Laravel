@@ -66,21 +66,36 @@ Route::get('/about', [PostsController::class, 'display']);
 Route::get('/details', [PostsController::class, 'details']);
 
 //using another controller called students
-Route::get('/student',[StudentController::class, 'display']);
-Route::get('/student/{id}',[StudentController::class, 'displayId']);
+Route::get('/student', [StudentController::class, 'display']);
+Route::get('/student/{id}', [StudentController::class, 'displayId']);
 
 //Activity 2
-Route::post('/information',[registerController::class,'register']);
+Route::post('/information', [registerController::class, 'register']);
 
 //first parameter is the name in the url, second parameter is the registration.blade.php
-Route::view('/registration','registration');
+Route::view('/registration', 'registration');
 
 //endof Act2
 
-Route::post('/validationTestView',[validationTestController::class,'regValidate']);
-Route::view('/validationTest','validationTest');
+Route::post('/validationTestView', [validationTestController::class, 'regValidate']);
+Route::view('/validationTest', 'validationTest');
 
 //routing models
-Route::get('/createNew', [employeesController::class,'create']);
-Route::post('createUser',[employeesController::class, 'store']);
-Route::get('/employeesView', [employeesController::class,'index']);
+Route::get('/createNew', [employeesController::class, 'create']);
+Route::post('createUser', [employeesController::class, 'store']);
+Route::get('/employeesView', [employeesController::class, 'index']);
+
+//using @yield
+
+route::get('/indexPost', [PostsController::class, 'indexYield']);
+// route::get('/viewPost', [PostsController::class, 'viewingPostYield']);
+
+
+//compiled all functions from postsController
+route::resource('posts', PostsController::class);
+Route::get('/view/{id}', [PostsController::class, 'show']);
+Route::get('edit/{id}', [PostsController::class, 'edit']);
+Route::post('edit/{id}', [PostsController::class, 'update']);
+Route::get('delete/{id}', [PostsController::class, 'destroy']);
+Route::get('/login', [PostsController::class, 'login']);
+Route::get('/login/checklogin', [PostsController::class, 'checklogin']);

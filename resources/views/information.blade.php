@@ -27,23 +27,23 @@
             <tbody>
                 <tr>
                     <td><b>Name</b></td>
-                    <td>{{$name}}</td>
+                    <td>{{ $name }}</td>
                 </tr>
                 <tr>
                     <td><b>Sex</b></td>
-                    <td>{{$sex}}</td>
+                    <td>{{ $sex }}</td>
                 </tr>
                 <tr>
                     <td><b>Age</b></td>
-                    <td>{{$age}}</td>
+                    <td>{{ $age }}</td>
                 </tr>
                 <tr>
                     <td><b>Birthday</b></td>
-                    <td>{{$bday}}</td>
+                    <td>{{ $bday }}</td>
                 </tr>
                 <tr>
                     <td><b>Civil Status</b></td>
-                    <td>{{$civilStat}}</td>
+                    <td>{{ $civilStat }}</td>
                 </tr>
             </tbody>
         </table>

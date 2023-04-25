@@ -32,11 +32,15 @@ class employeesController extends Controller
             [
                 'name' => 'required',
                 'position' => 'required',
+                'email' => 'email',
+                'password' => 'required'
             ]
         );
         $employee = new employees();
         $employee->name = $request->name;
         $employee->position = $request->position;
+        $employee->email = $request->email;
+        $employee->password = $request->password;
 
         $employee->save();
         return redirect('/employeesView');
