@@ -24,35 +24,29 @@
         </center>
         <br><br>
         <table class="table table-striped table-bordered">
-            <tbody>
+            <thead>
                 <tr>
+                    <td><b>ID</b></td>
                     <td><b>Name</b></td>
-                    <td>{{$fname}}</td>
+                    <td><b>Position</b></td>
+                    <td><b>created_at</b></td>
+                    <td><b>updated_at</b></td>
                 </tr>
+            </thead>
+            <tbody>
+                @forelse($employee as $employeeView)
                 <tr>
-                    <td><b>Sex</b></td>
-                    <td>{{$lname}}</td>
+                    <td>{{$employeeView->id}}</td>
+                    <td>{{$employeeView->name}}</td>
+                    <td>{{$employeeView->position}}</td>
+                    <td>{{$employeeView->created_at}}</td>
+                    <td>{{$employeeView->updated_at}}</td>
+                    
                 </tr>
-                <tr>
-                    <td><b>Sex</b></td>
-                    <td>{{$password}}</td>
-                </tr>
-                <tr>
-                    <td><b>Age</b></td>
-                    <td>{{$age}}</td>
-                </tr>
-                <tr>
-                    <td><b>Birthday</b></td>
-                    <td>{{$bday}}</td>
-                </tr>
-                <tr>
-                    <td><b>Website</b></td>
-                    <td>{{$website}}</td>
-                </tr>
-                <tr>
-                    <td><b>Email</b></td>
-                    <td>{{$email}}</td>
-                </tr>
+                @empty
+                <tr>There is no data available</tr>
+                @endforelse
+                
             </tbody>
         </table>
     </div>
